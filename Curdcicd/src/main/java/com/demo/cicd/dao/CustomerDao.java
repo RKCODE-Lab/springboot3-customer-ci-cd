@@ -1,6 +1,7 @@
 package com.demo.cicd.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.demo.cicd.pojo.Customer;
 
@@ -10,7 +11,9 @@ public interface CustomerDao {
 
 	public Customer updateCustomerDetails(Customer customer);
 
-	public Customer deleteCustomerDetails(int customerid);
+	public void deleteCustomerDetails(int id);
 
-	public List<Customer> getAllCustomers();
+	public List<Customer> findAll();
+	
+	public Optional<Customer> findById(int id);
 }
