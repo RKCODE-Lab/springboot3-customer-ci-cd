@@ -51,7 +51,7 @@ public class CustomerController {
 		return ResponseEntity.ok(customerService.addCustomerDetails(customer));
 	}
 	
-	@PutMapping("/updateCustomerDetails")
+	@PutMapping("/updateCustomerDetails/{id}")
 	public ResponseEntity<Customer> updateCustomerDetails(@PathVariable("id") Integer id,@RequestBody Customer updateCustomer){
 		if(!customerService.findById(id).isPresent()) {
 			return ResponseEntity.notFound().build();
