@@ -31,7 +31,7 @@ public class CustomerController {
 		this.customerService = customerService;
 	}
 
-	@GetMapping("/welcome")
+	@GetMapping("/ok")
 	public String getWelcomeMessage() {
 		return "Welcome RK";
 	}
