@@ -39,7 +39,7 @@ jobs:
           chmod 600 private_key.pem
 
           # Copy the WAR file from backend/target/ to the EC2 instance
-          scp -i private_key.pem -o StrictHostKeyChecking=no actions-runner/_work/springboot3-customer-ci-cd/springboot3-customer-ci-cd/Curdcicd/target/Curdcicd.war $EC2_USERNAME@$EC2_HOST:/opt/tomcat/webapps/
+          scp -i private_key.pem -o StrictHostKeyChecking=no /home/ubuntu/actions-runner/_work/springboot3-customer-ci-cd/springboot3-customer-ci-cd/Curdcicd/target/Curdcicd.war $EC2_USERNAME@$EC2_HOST:/opt/tomcat/webapps/
 
           # Optionally restart Tomcat
           ssh -i private_key.pem -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_HOST "sudo systemctl restart tomcat"
